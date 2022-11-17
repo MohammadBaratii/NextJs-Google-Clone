@@ -1,20 +1,28 @@
+import { useSession } from "next-auth/react";
 import Link from "next/link";
+import UserProfile from "./UserProfile";
 
 const Header = () => {
+  const { data: isAuthenticated } = useSession();
+
   return (
     <header>
       <ul className="flex items-center gap-5 p-4">
-        <li>
-          <Link href="/" className="hover:underline">
-            About
-          </Link>
-        </li>
-        <li className="mr-auto">
-          <Link href="/" className="hover:underline">
-            Store
-          </Link>
-        </li>
-        <li>
+        {isAuthenticated && (
+          <>
+            <li>
+              <Link href="/" className="hover:underline">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/" className="hover:underline">
+                Store
+              </Link>
+            </li>
+          </>
+        )}
+        <li className="ml-auto">
           <Link href="/" className="hover:underline">
             Gmail
           </Link>
@@ -25,13 +33,7 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <Link href="/">
-            <img
-              src="https://cdn.dribbble.com/users/5534/screenshots/14230133/media/e2f853f8232acad78bf143c32f2f3a04.jpg?compress=1&resize=768x576&vertical=top"
-              alt="avatar"
-              className="w-9 h-9 object-cover rounded-full hover:ring-4 ring-neutral-200"
-            />
-          </Link>
+          <UserProfile />
         </li>
       </ul>
     </header>
