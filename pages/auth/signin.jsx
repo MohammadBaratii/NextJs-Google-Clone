@@ -1,5 +1,6 @@
 import { signIn } from "next-auth/react";
 import Head from "next/head";
+import Image from "next/image";
 
 const SignIn = () => {
   return (
@@ -9,10 +10,13 @@ const SignIn = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="grid place-content-center gap-4 mt-32">
-        <img
+        <Image
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
           alt="Google Icon"
-          className="w-56 m-auto object-cover"
+          width="160"
+          height="55"
+          priority
+          className="w-40 m-auto object-cover sm:w-64"
         />
         <p className="italic">This website is for learning purposes only.</p>
         <button
