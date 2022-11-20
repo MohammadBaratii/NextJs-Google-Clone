@@ -8,7 +8,7 @@ const UserProfile = () => {
 
   if (session) {
     return (
-      <div>
+      <div className="w-max">
         <Image
           src={session.user.image}
           alt="User avatar"
@@ -50,7 +50,7 @@ const UserProfile = () => {
   }
   return (
     <button
-      className="p-7 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 hover:shadow-md"
+      className="w-max p-7 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 hover:shadow-md"
       onClick={signIn}
     >
       Sign In

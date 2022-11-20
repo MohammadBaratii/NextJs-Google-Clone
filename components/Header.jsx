@@ -3,12 +3,12 @@ import Link from "next/link";
 import UserProfile from "./UserProfile";
 
 const Header = () => {
-  const { data: isAuthenticated } = useSession();
+  const { data: session } = useSession();
 
   return (
     <header>
       <ul className="flex items-center gap-5 p-4">
-        {isAuthenticated && (
+        {session && (
           <>
             <li>
               <Link href="/" className="hover:underline">
