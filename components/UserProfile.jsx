@@ -12,8 +12,8 @@ const UserProfile = () => {
         <Image
           src={session.user.image}
           alt="User avatar"
-          width="200"
-          height="200"
+          width="500"
+          height="500"
           className="w-10 h-10 rounded-full object-cover cursor-pointer hover:ring-4 hover:ring-neutral-300"
           onClick={() => setIsProfileClicked(true)}
         />
