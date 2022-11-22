@@ -1,13 +1,14 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import PaginationButtons from "../../components/search/PaginationButtons";
+import SearchBodyImageList from "../../components/search/SearchBodyImageList";
 import SearchBodyList from "../../components/search/SearchBodyList";
 import SearchHeader from "../../components/search/SearchHeader";
-import { allSearchType } from "../../dummy-data";
+import { imageSearchType } from "../../dummy-data";
 
 const Search = (props) => {
   const {
-    query: { term },
+    query: { term, searchType },
   } = useRouter();
 
   const title = `${term} - Google Search`;
@@ -19,7 +20,11 @@ const Search = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SearchHeader />
-      <SearchBodyList {...props} />
+      {!searchType ? (
+        <SearchBodyList {...props} />
+      ) : (
+        <SearchBodyImageList {...props} />
+      )}
       <PaginationButtons />
     </>
   );
@@ -31,7 +36,7 @@ export const getServerSideProps = async ({ query }) => {
   const pageCount = query.start || 1;
 
   const response = useDummyData
-    ? allSearchType
+    ? imageSearchType
     : await fetch(`
   https://www.googleapis.com/customsearch/v1?key=${
     process.env.SEARCH_API_KEY
