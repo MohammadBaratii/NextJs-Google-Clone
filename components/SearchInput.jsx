@@ -19,7 +19,6 @@ const SearchInput = forwardRef((_, ref) => {
   };
 
   const handleSearch = () => {
-    console.log("here");
     if (input.trim()) {
       router.push(`/search?term=${input.trim()}&searchType=`);
     }

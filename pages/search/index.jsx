@@ -1,17 +1,41 @@
 import Head from "next/head";
-import SearchHeader from "../../components/SearchHeader";
+import { useRouter } from "next/router";
+import SearchBodyList from "../../components/search/SearchBodyList";
+import SearchHeader from "../../components/search/SearchHeader";
+import { allSearchType } from "../../dummy-data";
 
-const Search = () => {
+const Search = (props) => {
+  const {
+    query: { term },
+  } = useRouter();
   return (
     <>
       <Head>
-        <title>Search</title>
+        <title>{term} - Google Search</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SearchHeader />
-      <main>main</main>
+      <SearchBodyList {...props} />
     </>
   );
+};
+
+export const getServerSideProps = async ({ query }) => {
+  // I use hard coded data for now because google developer allows 100 request per day
+  const useDummyData = true;
+  const response = useDummyData
+    ? allSearchType
+    : await fetch(`
+  https://www.googleapis.com/customsearch/v1?key=${
+    process.env.SEARCH_API_KEY
+  }&cx=${process.env.SEARCH_CONTEXT_KEY}&q=${query.term}${
+        query.searchType && "&searchType=image"
+      }
+  `);
+  const data = useDummyData ? response : await response.json();
+  return {
+    props: data,
+  };
 };
 
 export default Search;

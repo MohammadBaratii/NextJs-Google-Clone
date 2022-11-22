@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import SearchHeaderOptionList from "./SearchHeaderOptionList";
-import SearchInput from "./SearchInput";
-import UserProfile from "./UserProfile";
+import SearchInput from "../SearchInput";
+import UserProfile from "../UserProfile";
 
 const SearchHeader = () => {
   return (
-    <header className="p-6 pb-0 border-b">
+    <header className="p-6 px-10 pb-0 border-b">
       <nav className="flex items-center">
         <h1>
           <Link href="/">

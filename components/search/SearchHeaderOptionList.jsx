@@ -12,7 +12,7 @@ const SearchHeaderOptionList = () => {
   } = useRouter();
 
   return (
-    <ul className="flex gap-5 mt-10 ml-32">
+    <ul className="flex gap-5 mt-10">
       {ALL_TABS.map((tab) => {
         return (
           <SearchHeaderOptionItem
