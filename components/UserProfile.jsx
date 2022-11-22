@@ -12,8 +12,8 @@ const UserProfile = () => {
         <Image
           src={session.user.image}
           alt="User avatar"
-          width="100"
-          height="100"
+          width="200"
+          height="200"
           className="w-10 h-10 rounded-full object-cover cursor-pointer hover:ring-4 hover:ring-neutral-300"
           onClick={() => setIsProfileClicked(true)}
         />
@@ -50,7 +50,7 @@ const UserProfile = () => {
   }
   return (
     <button
-      className="w-max p-7 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 hover:shadow-md"
+      className="w-max p-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 hover:shadow-md sm:px-7"
       onClick={signIn}
     >
       Sign In

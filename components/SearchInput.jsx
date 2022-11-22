@@ -30,14 +30,14 @@ const SearchInput = forwardRef((_, ref) => {
 
   return (
     <form
-      className="relative w-full max-w-xl px-5"
+      className="relative"
       onSubmit={(e) => {
         e.preventDefault();
         handleSearch();
       }}
     >
       <button
-        className="absolute top-1/2 left-9 -translate-y-1/2"
+        className="absolute top-1/2 left-4 -translate-y-1/2"
         onClick={handleSearch}
       >
         <svg
@@ -55,7 +55,7 @@ const SearchInput = forwardRef((_, ref) => {
           />
         </svg>
       </button>
-      <button className="absolute top-1/2 right-9 -translate-y-1/2">
+      <button className="absolute top-1/2 right-4 -translate-y-1/2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ const SearchInput = forwardRef((_, ref) => {
       </button>
       {showClearButton && (
         <button
-          className="absolute flex items-center gap-3 top-1/2 right-[68px] -translate-y-1/2"
+          className="absolute flex items-center gap-3 top-1/2 right-12 -translate-y-1/2"
           onClick={handleClear}
         >
           <svg

@@ -6,8 +6,8 @@ import UserProfile from "../UserProfile";
 
 const SearchHeader = () => {
   return (
-    <header className="p-6 px-10 pb-0 border-b">
-      <nav className="flex items-center">
+    <header className="border-b">
+      <nav className="flex items-center gap-3 p-7 px-3 md:gap-10 sm:px-7">
         <h1>
           <Link href="/">
             <Image
@@ -19,7 +19,9 @@ const SearchHeader = () => {
             />
           </Link>
         </h1>
-        <SearchInput />
+        <div className="flex-1 max-w-lg">
+          <SearchInput />
+        </div>
         <div className="ml-auto">
           <UserProfile />
         </div>

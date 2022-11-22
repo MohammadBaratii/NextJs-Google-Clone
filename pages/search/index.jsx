@@ -8,10 +8,13 @@ const Search = (props) => {
   const {
     query: { term },
   } = useRouter();
+
+  const title = `${term} - Google Search`;
+
   return (
     <>
       <Head>
-        <title>{term} - Google Search</title>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SearchHeader />

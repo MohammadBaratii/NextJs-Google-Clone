@@ -24,7 +24,9 @@ export default function Home() {
           priority
           className="w-40 m-auto object-cover sm:w-64"
         />
-        <SearchInput ref={SearchInputRef} />
+        <div className="w-full max-w-xl px-4">
+          <SearchInput ref={SearchInputRef} />
+        </div>
         <div className="flex gap-3">
           <button
             className="p-4 py-2 bg-neutral-100 rounded hover:ring-1 hover:ring-neutral-300"
