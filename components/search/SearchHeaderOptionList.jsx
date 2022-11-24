@@ -12,7 +12,7 @@ const SearchHeaderOptionList = () => {
   } = useRouter();
 
   return (
-    <ul className="flex gap-5 px-3 sm:pl-[5%] md:pl-[13%]">
+    <ul className="flex gap-5 px-5 sm:pl-[5%] md:pl-[13%]">
       {ALL_TABS.map((tab) => {
         return (
           <SearchHeaderOptionItem

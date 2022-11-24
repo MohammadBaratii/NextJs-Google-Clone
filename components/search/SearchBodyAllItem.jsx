@@ -1,6 +1,11 @@
 import parse from "html-react-parser";
 
-const SearchBodyItem = ({ displayLink, formattedUrl, title, htmlSnippet }) => {
+const SearchBodyAllItem = ({
+  displayLink,
+  formattedUrl,
+  title,
+  htmlSnippet,
+}) => {
   return (
     <div className="my-6">
       <a
@@ -19,4 +24,4 @@ const SearchBodyItem = ({ displayLink, formattedUrl, title, htmlSnippet }) => {
   );
 };
 
-export default SearchBodyItem;
+export default SearchBodyAllItem;

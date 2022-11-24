@@ -23,7 +23,7 @@ const UserProfile = () => {
             onClick={() => setIsProfileClicked(false)}
           >
             <div
-              className="absolute top-[70px] right-[14px] w-max p-3 bg-neutral-700 rounded-lg"
+              className="absolute top-[85px] right-3 w-max p-3 bg-neutral-700 rounded-lg sm:right-7"
               onClick={(e) => e.stopPropagation()}
             >
               <span className="absolute -top-[6%] right-4 w-4 h-4 bg-neutral-700 rounded rotate-45 -z-10"></span>

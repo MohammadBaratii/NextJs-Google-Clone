@@ -1,11 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useRef } from "react";
 import Header from "../components/Header";
 import SearchInput from "../components/SearchInput";
 
 export default function Home() {
   const SearchInputRef = useRef();
+  const router = useRouter();
+
+  const handleFeelingLuckySearch = async () => {
+    const response = await fetch("https://random-word-api.herokuapp.com/word");
+    const data = await response.json();
+    router.push(`/search?term=${data[0]}&searchType=`);
+  };
 
   return (
     <>
@@ -34,7 +42,10 @@ export default function Home() {
           >
             Google Search
           </button>
-          <button className="p-4 py-2 bg-neutral-100 rounded hover:ring-1 hover:ring-neutral-300">
+          <button
+            className="p-4 py-2 bg-neutral-100 rounded hover:ring-1 hover:ring-neutral-300"
+            onClick={handleFeelingLuckySearch}
+          >
             I&#39;m Feeling Lucky
           </button>
         </div>

@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import PaginationButtons from "../../components/search/PaginationButtons";
 import SearchBodyImageList from "../../components/search/SearchBodyImageList";
-import SearchBodyList from "../../components/search/SearchBodyList";
+import SearchBodyAllList from "../../components/search/SearchBodyAllList";
 import SearchHeader from "../../components/search/SearchHeader";
 import { imageSearchType } from "../../dummy-data";
 
@@ -21,7 +21,7 @@ const Search = (props) => {
       </Head>
       <SearchHeader />
       {!searchType ? (
-        <SearchBodyList {...props} />
+        <SearchBodyAllList {...props} />
       ) : (
         <SearchBodyImageList {...props} />
       )}
@@ -31,8 +31,8 @@ const Search = (props) => {
 };
 
 export const getServerSideProps = async ({ query }) => {
-  // I use hard coded data for now because google developer allows 100 request per day
-  const useDummyData = true;
+  // I used hard coded data for development mode because google developer allows 100 request per day
+  const useDummyData = false;
   const pageCount = query.start || 1;
 
   const response = useDummyData
