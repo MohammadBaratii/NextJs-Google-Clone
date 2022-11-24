@@ -97,5 +97,6 @@ const SearchInput = forwardRef((_, ref) => {
     </form>
   );
 });
+SearchInput.displayName = "SearchInput";
 
 export default SearchInput;

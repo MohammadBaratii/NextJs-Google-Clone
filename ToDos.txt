@@ -1,3 +1,0 @@
-- Use Next/Head
-- Replace img tag with Next/Image
-- Fix useDummyData
