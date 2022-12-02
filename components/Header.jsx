@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header>
-      <ul className="flex items-center gap-5 p-4">
+      <ul className="flex items-center gap-5 p-7 px-3 sm:px-7">
         {session && (
           <>
             <li>
