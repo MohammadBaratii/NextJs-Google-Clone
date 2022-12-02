@@ -1,5 +1,4 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import Image from "next/image";
 import { useState } from "react";
 
 const UserProfile = () => {
@@ -9,11 +8,9 @@ const UserProfile = () => {
   if (session) {
     return (
       <div className="w-max">
-        <Image
+        <img
           src={session.user.image}
           alt="User avatar"
-          width="500"
-          height="500"
           className="w-10 h-10 rounded-full object-cover cursor-pointer hover:ring-4 hover:ring-neutral-300"
           onClick={() => setIsProfileClicked(true)}
         />
@@ -27,7 +24,9 @@ const UserProfile = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <span className="absolute -top-[6%] right-4 w-4 h-4 bg-neutral-700 rounded rotate-45 -z-10"></span>
-              <p className="text-white font-medium">{session.user.name}</p>
+              <p className="text-white text-center font-medium">
+                {session.user.name}
+              </p>
               <button
                 className="flex items-center gap-1 m-auto mt-2 p-3 py-1 bg-red-400 text-white rounded transition hover:bg-red-500"
                 onClick={() => signOut()}
