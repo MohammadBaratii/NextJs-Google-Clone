@@ -6,7 +6,7 @@ import SearchBodyAllList from "../../components/search/SearchBodyAllList";
 import SearchHeader from "../../components/search/SearchHeader";
 import { imageSearchType } from "../../dummy-data";
 
-const Search = (props) => {
+const Search = ({ data }) => {
   const {
     query: { term, searchType },
   } = useRouter();
@@ -21,9 +21,9 @@ const Search = (props) => {
       </Head>
       <SearchHeader />
       {!searchType ? (
-        <SearchBodyAllList {...props} />
+        <SearchBodyAllList {...data} />
       ) : (
-        <SearchBodyImageList {...props} />
+        <SearchBodyImageList {...data} />
       )}
       <PaginationButtons />
     </>
@@ -46,7 +46,7 @@ export const getServerSideProps = async ({ query }) => {
   `);
   const data = useDummyData ? response : await response.json();
   return {
-    props: data,
+    props: { data },
   };
 };
 

@@ -30,7 +30,7 @@ const UserProfile = () => {
               <p className="text-white font-medium">{session.user.name}</p>
               <button
                 className="flex items-center gap-1 m-auto mt-2 p-3 py-1 bg-red-400 text-white rounded transition hover:bg-red-500"
-                onClick={signOut}
+                onClick={() => signOut()}
               >
                 Sign Out
                 <svg
@@ -51,7 +51,7 @@ const UserProfile = () => {
   return (
     <button
       className="w-max p-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 hover:shadow-md sm:px-7"
-      onClick={signIn}
+      onClick={() => signIn()}
     >
       Sign In
     </button>
