@@ -2,7 +2,7 @@
 ![image info](./public/images/page2.png)
 ![image info](./public/images/page3.png)
 
-# Google Clone ([Live Site](https://next-js-google-clone-beta.vercel.app/))
+# Google Clone ([Live Site](https://next-js-google-clone-sigma.vercel.app/))
 
 Google clone app using Next.js. In this app you can search for real google data and images and you can SignIn with your Github account. I used Next-Auth to implement authentication.
 
