@@ -4,7 +4,6 @@ import Image from "next/image";
 import Header from "../../components/Header";
 
 const SignIn = ({ providers }) => {
-  console.log(providers);
   return (
     <>
       <Head>
@@ -12,7 +11,7 @@ const SignIn = ({ providers }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      {/* <section className="grid place-content-center gap-4 mt-32">
+      <section className="grid place-content-center gap-4 mt-32">
         <Image
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
           alt="Google Icon"
@@ -66,7 +65,7 @@ const SignIn = ({ providers }) => {
             </button>
           );
         })}
-      </section> */}
+      </section>
     </>
   );
 };
